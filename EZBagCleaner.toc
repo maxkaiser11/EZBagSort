@@ -1,0 +1,6 @@
+## Interface: 100207 
+## Title: EZBagCleaner
+## Notes: One-click junk item seller
+## Author: Crubz
+## Version: 1.0
+EZBagCleaner.lua
