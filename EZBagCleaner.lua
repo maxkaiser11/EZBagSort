@@ -1,8 +1,18 @@
 local f = CreateFrame("Frame")
 f:RegisterEvent("MERCHANT_SHOW")
-f:SetScript("OnEvent", function()
-    if not EZSellButton then
-        CreateSellButton()
+f:RegisterEvent("MERCHANT_CLOSED")
+
+f:SetScript("OnEvent", function(_, event)
+    if event == "MERCHANT_SHOW" then
+        if not EZSellButton then
+            CreateSellButton()
+        else
+            EZSellButton:Show()
+        end
+    elseif event == "MERCHANT_CLOSED" then
+        if EZSellButton then
+            EZSellButton:Hide()
+        end
     end
 end)
 
@@ -10,7 +20,7 @@ function CreateSellButton()
     EZSellButton = CreateFrame("Button", nil, UIParent, "UIPanelButtonTemplate")
     EZSellButton:SetSize(100, 25)
     EZSellButton:SetText("Sell Junk")
-    EZSellButton:SetPoint("TOPLEFT", MerchantFrame, "BOTTOMLEFT", 0, -5)
+    EZSellButton:SetPoint("TOPLEFT", MerchantFrame, "TOPRIGHT", 10, -35)
 
     EZSellButton:SetScript("OnClick", function()
         local total = 0
