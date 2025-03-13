@@ -7,10 +7,10 @@ f:SetScript("OnEvent", function()
 end)
 
 function CreateSellButton()
-    EZSellButton = CreateFrame("Button", nil, MerchantFrame, "UIPanelButtonTemplate")
+    EZSellButton = CreateFrame("Button", nil, UIParent, "UIPanelButtonTemplate")
     EZSellButton:SetSize(100, 25)
     EZSellButton:SetText("Sell Junk")
-    EZSellButton:SetPoint("TOPRIGHT", MerchantFrame, "TOPRIGHT", -25, -35)
+    EZSellButton:SetPoint("TOPLEFT", MerchantFrame, "BOTTOMLEFT", 0, -5)
 
     EZSellButton:SetScript("OnClick", function()
         local total = 0
@@ -28,7 +28,7 @@ function CreateSellButton()
             end
         end
         if total > 0 then
-            print("|cff00ff00EZBagCleaner:|r Sold junk for " .. GetCoinTextureString(total))
+            print("|cff00ff00EZBagCleaner:|r Sold junk for " .. C_CurrencyInfo.GetCoinTextureString(total))
         else
             print("|cffff0000EZBagCleaner:|r No junk items to sell.")
         end
