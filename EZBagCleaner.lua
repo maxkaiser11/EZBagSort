@@ -28,7 +28,7 @@ function CreateSellButton()
             end
         end
         if total > 0 then
-            print("|cff00ff00EZBagCleaner:|r Sold junk for " .. GetCoinTextureString(total))
+            print("|cff00ff00EZBagCleaner:|r Sold junk for " .. C_CurrencyInfo.GetCoinTextureString(total))
         else
             print("|cffff0000EZBagCleaner:|r No junk items to sell.")
         end

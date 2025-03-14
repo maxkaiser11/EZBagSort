@@ -1,4 +1,4 @@
-## Interface: 100207 
+## Interface: 110100
 ## Title: EZBagCleaner
 ## Notes: One-click junk item seller
 ## Author: Crubz
